@@ -33,13 +33,13 @@ with open('train.txt', 'r') as file:
             train_np_real[index] = img_real
             index = index + 1
 
-with open('train.npy', 'wb') as file:
+with open('../train.npy', 'wb') as file:
     np.save(file, train_np)
 
-with open('train_gt.npy', 'wb') as file:
+with open('../train_gt.npy', 'wb') as file:
     np.save(file, train_np_gt)
 
-with open('train_real.npy', 'wb') as file:
+with open('../train_real.npy', 'wb') as file:
     np.save(file, train_np_real)
 
 index = 0
@@ -64,13 +64,13 @@ with open('valid.txt', 'r') as file:
             valid_np_real[index] = img_real
             index = index + 1
 
-with open('valid.npy', 'wb') as file:
+with open('../valid.npy', 'wb') as file:
     np.save(file, valid_np)
 
-with open('valid_gt.npy', 'wb') as file:
+with open('../valid_gt.npy', 'wb') as file:
     np.save(file, valid_np_gt)
 
-with open('valid_real.npy', 'wb') as file:
+with open('../valid_real.npy', 'wb') as file:
     np.save(file, valid_np_real)
 
 index = 0
@@ -87,5 +87,5 @@ with open('test.txt', 'r') as file:
             test_np[index] = img
             index = index + 1
 
-with open('test.npy', 'wb') as file:
+with open('../test.npy', 'wb') as file:
     np.save(file, test_np)

@@ -5,13 +5,13 @@ import matplotlib.pyplot as plt
 
 torch.manual_seed(483)
 
-x_train_np = np.load('train.npy')
-y_train_np = np.load('train_gt.npy')
+x_train_np = np.load('../train.npy')
+y_train_np = np.load('../train_gt.npy')
 
-x_valid_np = np.load('valid.npy')
-y_valid_np = np.load('valid_gt.npy')
+x_valid_np = np.load('../valid.npy')
+y_valid_np = np.load('../valid_gt.npy')
 
-x_test_np = np.load('test.npy')
+x_test_np = np.load('../test.npy')
 
 x_train_np = np.transpose(x_train_np, (0, 3, 1, 2))
 y_train_np = np.transpose(y_train_np, (0, 3, 1, 2))
@@ -113,7 +113,7 @@ for idx in range(int(100/batch_size)):
 
     y_pred_valid[idx * batch_size: (idx + 1) * batch_size, :, :, :] = y_pred_valid_.cpu().detach().numpy()
 
-with open('valid_est.npy', 'wb') as file:
+with open('../valid_est.npy', 'wb') as file:
     np.save(file, y_pred_valid)
 
 y_pred_test = np.ndarray(shape=(100, 2, 64, 64))
@@ -125,7 +125,7 @@ for idx in range(int(100 / batch_size)):
 
     y_pred_test[idx * batch_size: (idx + 1) * batch_size, :, :, :] = y_pred_test_.cpu().detach().numpy()
 
-with open('test_est.npy', 'wb') as file:
+with open('../test_est.npy', 'wb') as file:
     np.save(file, y_pred_test)
 
 plt.plot(np.arange(epochs), np.array(loss_train_arr), label='train')
