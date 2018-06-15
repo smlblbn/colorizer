@@ -1,4 +1,4 @@
-name: vision2
+name: colorizer
 dependencies:
 - python=3.5.4
 - numpy
